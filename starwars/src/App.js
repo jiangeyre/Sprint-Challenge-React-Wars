@@ -3,6 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import './App.css';
 
+import Search from "./components/SearchBar";
 import PersonCard from "./components/PersonCard";
 
 const PersonContainer = styled.div`
@@ -33,6 +34,8 @@ const App = () => {
   }, [])
 
   return (
+    <>
+    <Search/>
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <PersonContainer>
@@ -60,6 +63,7 @@ const App = () => {
         }
       </PersonContainer>
     </div>
+    </>
   );
 }
 
