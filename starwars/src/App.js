@@ -6,6 +6,32 @@ import './App.css';
 import Search from "./components/SearchBar";
 import PersonCard from "./components/PersonCard";
 
+const Header = styled.h1`
+  text-shadow: 5px 5px 50px #fff;
+  font-size: 5rem;
+  font-family: 'ZCOOL XiaoWei', serif;
+  margin: 2% 0 2%;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #443e3e);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 20s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  }
+
+  @keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+`;
+
 const PersonContainer = styled.div`
   margin: 2% 2%;
   display: grid;
@@ -37,7 +63,7 @@ const App = () => {
     <>
     <Search/>
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <Header>React Wars</Header>
       <PersonContainer>
         {
           person.map((char, index) => {

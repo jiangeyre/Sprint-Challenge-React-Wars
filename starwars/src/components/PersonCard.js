@@ -16,11 +16,21 @@ const Card = styled.div`
     opacity: 0.8;
 `;
 
+const Name = styled.h2`
+    font-family: 'Cinzel', serif;
+    font-size: 1.7rem;
+`;
+
+const Info = styled.div`
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+`;
+
 const PersonCard = (props) => {
     return (
         <Card>
-            <h2>{props.name}</h2>
-                <div>
+            <Name>{props.name}</Name>
+                <Info>
                     {/* <p>Species: {props.species}</p> */}
                     <p>Gender: {props.gender.charAt(0).toUpperCase() + props.gender.slice(1)}</p>
                     {/* <p>Homeworld: {props.homeworld}</p> */}
@@ -33,7 +43,7 @@ const PersonCard = (props) => {
                     {/* <p>Starships: {props.starships}</p>
                     <p>Vehicles: {props.vehicles}</p>
                     <p>Films: {props.films}</p> */}
-            </div>
+            </Info>
         </Card>
     )
 }

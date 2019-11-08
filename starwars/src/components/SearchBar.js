@@ -1,7 +1,13 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 // const randomSearches = [ "Luke", "Kylo Ren", "Darth Maul", "Leia", "Male"];
+
+const Searchbar = styled.div`
+    width: 10%;
+`;
+
 
 function Search(){
     const [searchTerm, setSearchTerm] = useState("");
@@ -25,14 +31,14 @@ function Search(){
     }, [searchTerm])
 
     return (
-        <div className="searchbar">
+        <Searchbar>
             <input type="text" placeholder="Search" value={searchTerm} onChange={handleChange}/>
             <ul>
                 {searchResults.map(item => {
                     return <li>{item}</li>
                 })}
             </ul>
-        </div>
+        </Searchbar>
     );
 
 }
