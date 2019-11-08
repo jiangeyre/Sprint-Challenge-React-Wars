@@ -6,7 +6,10 @@ import './App.css';
 import PersonCard from "./components/PersonCard";
 
 const PersonContainer = styled.div`
-
+  margin: 2% 2%;
+  display: grid;
+  grid-gap: 125px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
 
 

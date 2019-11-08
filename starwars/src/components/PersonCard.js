@@ -1,8 +1,24 @@
 import React from "react";
+import styled from "styled-components";
+
+const Card = styled.div`
+    background: #ba9d79;
+    color: white;
+    height: 450px;
+    border: 3px solid #968e83;
+    border-radius: 5px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22), inset 0 15px 20px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0.7;
+`;
 
 const PersonCard = (props) => {
     return (
-        <div className="card-cont">
+        <Card>
             <h2>{props.name}</h2>
                 <div>
                     {/* <p>Species: {props.species}</p> */}
@@ -18,7 +34,7 @@ const PersonCard = (props) => {
                     <p>Vehicles: {props.vehicles}</p>
                     <p>Films: {props.films}</p> */}
             </div>
-        </div>
+        </Card>
     )
 }
 
