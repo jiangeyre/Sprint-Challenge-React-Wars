@@ -26,13 +26,33 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+    React.js is an open-source JavaScript library which is used for building user interfaces specifically for single page applications. It’s used for handling view layer for web and mobile apps. React allows us to create reusable UI components. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. React has a virtual DOM which can be manipulated.
+
+
 - [ ] What does it mean to _think_ in react?
+
+    How to build components and applications in React. How you think about apps as you build them.
+        Break the UI into a Component Hierarchy
+        Build a Static Version in React
+        Identify the Minimal (but complete) Representation of UI State
+        Identify where your State Should Live
+        Add Inverse Data Flow   
+
 
 - [ ] Describe state.
 
+    An object that determines how that component renders and behaves. State is what allows you to create components that are dynamic and interactive.
+
+
 - [ ] Describe props.
 
+    Props are variables that are passed to a component by its parent component. State can be initialized by props and any other method in this class can reference  the props using this.props. Most components can be customized when they are created, with different parameters.
+
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+    A side effect is anything that affects something outside the scope of the function being executed. Data fetching, setting up a subscription, and manaully changing the DOM in React components are all types of side effects. You often are required to create a side effect when one of the component props changes. The effect hook can either run after every render, only on mount and unmount, or when specified values have been changed. 
+
 
 ## Project Set Up
 
