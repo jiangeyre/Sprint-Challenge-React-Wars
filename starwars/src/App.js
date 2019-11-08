@@ -3,9 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import './App.css';
 
-import Search from "./components/SearchBar";
 import PersonCard from "./components/PersonCard";
-// import SearchBar from "./components/Search";
 
 const Header = styled.h1`
   text-shadow: 5px 5px 50px #fff;
@@ -46,6 +44,11 @@ const App = () => {
   // the state properties here.
 
   const [person, setPerson] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const handleChange = event => {
+    setSearch(event.target.value)
+  }
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -62,35 +65,63 @@ const App = () => {
 
   return (
     <>
-    {/* <SearchBar/> */}
     <div className="App">
       <Header>React Wars</Header>
+      <input
+        type="text"
+        placeholder="Search"
+        value={search}
+        onChange={handleChange}
+      />
       <PersonContainer>
-        {
-          person.map((char, index) => {
-            return (
-              <PersonCard
-                key={index}
-                name={char.name}
-                species={char.species}
-                gender={char.gender}
-                homeworld={char.homeworld}
-                birthYear={char.birth_year}
-                height={char.height}
-                mass={char.mass}
-                hairColor={char.hair_color}
-                eyeColor={char.eye_color}
-                skinColor={char.skin_color}
-                starships={char.starships}
-                vehicles={char.vehicles}
-                films={char.films}
-              />
-            )
-          })
-        }
+        {person.map((char, index) => {
+          for (var item in char){
+            let itemStr = char[item] + "";
+            if(itemStr.toLowerCase().includes(search.toLowerCase())){
+              return (
+                <PersonCard
+                  key={index}
+                  name={char.name}
+                  species={char.species}
+                  gender={char.gender}
+                  homeworld={char.homeworld}
+                  birthYear={char.birth_year}
+                  height={char.height}
+                  mass={char.mass}
+                  hairColor={char.hair_color}
+                  eyeColor={char.eye_color}
+                  skinColor={char.skin_color}
+                  starships={char.starships}
+                  vehicles={char.vehicles}
+                  films={char.films}
+                />
+              )
+            }else if (search === ""){
+              return (
+                <PersonCard
+                  key={index}
+                  name={char.name}
+                  species={char.species}
+                  gender={char.gender}
+                  homeworld={char.homeworld}
+                  birthYear={char.birth_year}
+                  height={char.height}
+                  mass={char.mass}
+                  hairColor={char.hair_color}
+                  eyeColor={char.eye_color}
+                  skinColor={char.skin_color}
+                  starships={char.starships}
+                  vehicles={char.vehicles}
+                  films={char.films}
+                />
+              )
+            }
+          }             
+          return null;
+        })
+      }
       </PersonContainer>
     </div>
-    <Search/>
     </>
   );
 }
