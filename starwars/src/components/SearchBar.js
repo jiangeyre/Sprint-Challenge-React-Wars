@@ -8,6 +8,9 @@ const Searchbar = styled.div`
     width: 10%;
 `;
 
+const List = styled.ul`
+    display: none;
+`;
 
 function Search(){
     const [searchTerm, setSearchTerm] = useState("");
@@ -52,11 +55,11 @@ function Search(){
     return (
         <Searchbar>
             <input type="text" placeholder="Search" value={searchTerm} onChange={handleChange}/>
-            <ul>
+            <List>
                 {searchResults.map((item, index) => {
                     return <li key={index}>{item}</li>
                 })}
-            </ul>
+            </List>
         </Searchbar>
     );
 
