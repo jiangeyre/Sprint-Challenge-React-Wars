@@ -13,19 +13,16 @@ function Search(){
     useEffect(() => {
         axios.get("https://swapi.co/api/people/").then((response) => {
             const dataFetched = (response.data.results);
-            const matchresults = dataFetched.filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()));
-            setSearchResults(matchresults);
+            // const dataFetchedArr = Object.entries(dataFetched);
+            const dataFetchedKeyArr = Object.keys(dataFetched);
+            const dataFetchedValueArr = Object.values(dataFetched);
+            const keymatchresults = dataFetchedKeyArr.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()));
+            const valuematchresults = dataFetchedValueArr.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()));
+            setSearchResults(keymatchresults, valuematchresults);
         }).catch((error) => {
-            console.log(`There is an {error}.`);
+            console.log(`There is an ${error}.`);
         })
     }, [searchTerm])
-
-    // useEffect(() => {
-    //     const dataFetched = axios.get("https://swapi.co/api/people/");
-
-    //     const matchresults = dataFetched.filter((item) => item.toLowerCase().includes(searchTerm.toLowerCase()));
-    //     setSearchResults(matchresults);
-    // }, [searchTerm]);
 
     return (
         <div className="searchbar">
