@@ -53,7 +53,7 @@ const App = () => {
   useEffect(() => {
     axios.get("https://swapi.co/api/people/").then((response) => {
       setPerson(response.data.results);
-      console.log(response.data.results);
+      //console.log(response.data.results);
     }).catch((error) => {
       console.log("The data was not returned.", error);
     })
@@ -61,7 +61,6 @@ const App = () => {
 
   return (
     <>
-    <Search/>
     <div className="App">
       <Header>React Wars</Header>
       <PersonContainer>
@@ -89,6 +88,7 @@ const App = () => {
         }
       </PersonContainer>
     </div>
+    <Search/>
     </>
   );
 }
