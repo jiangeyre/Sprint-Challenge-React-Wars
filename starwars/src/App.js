@@ -5,6 +5,7 @@ import './App.css';
 
 import Search from "./components/SearchBar";
 import PersonCard from "./components/PersonCard";
+// import SearchBar from "./components/Search";
 
 const Header = styled.h1`
   text-shadow: 5px 5px 50px #fff;
@@ -61,6 +62,7 @@ const App = () => {
 
   return (
     <>
+    {/* <SearchBar/> */}
     <div className="App">
       <Header>React Wars</Header>
       <PersonContainer>
