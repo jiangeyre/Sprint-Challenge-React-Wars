@@ -41,17 +41,17 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Describe state.
 
-    An object that determines how that component renders and behaves. State is what allows you to create components that are dynamic and interactive.
+    An object that determines how that component renders and behaves. State is what allows you to create components that are dynamic and interactive. State holds our data.
 
 
 - [ ] Describe props.
 
-    Props are variables that are passed to a component by its parent component. State can be initialized by props and any other method in this class can reference  the props using this.props. Most components can be customized when they are created, with different parameters.
+    Props are variables that are passed to a component by its parent component. Most components can be customized when they are created, with different parameters. Props = state passed from parent to child.
 
 
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
 
-    A side effect is anything that affects something outside the scope of the function being executed. Data fetching, setting up a subscription, and manaully changing the DOM in React components are all types of side effects. You often are required to create a side effect when one of the component props changes. The effect hook can either run after every render, only on mount and unmount, or when specified values have been changed. 
+    A side effect is anything that affects something outside the scope of the function being executed. Data fetching, setting up a subscription, and manually changing the DOM in React components are all types of side effects. You often are required to create a side effect when one of the component props changes. The effect hook can either run after every render, only on mount and unmount, or when specified values have been changed in the dependency array. Things passed into the , [] => that the useEffect watches out for and runs.
 
 
 ## Project Set Up

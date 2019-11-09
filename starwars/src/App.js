@@ -75,6 +75,7 @@ const App = () => {
       />
       <PersonContainer>
         {person.map((char, index) => {
+          console.log(char);
           for (var item in char){
             let itemStr = char[item] + "";
             if(itemStr.toLowerCase().includes(search.toLowerCase())){
